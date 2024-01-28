@@ -1,3 +1,2 @@
-*.bak
-*.swp
-lib/.precomp/
+.precomp/
+/Grammar-Debugger-*

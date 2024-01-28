@@ -1,24 +1,27 @@
 {
-    "perl" : "6.*",
-    "name" : "Grammar::Debugger",
-    "version" : "1.0.1",
-    "auth" : "github:jnthn",
-    "license" : "Artistic-2.0",
-    "creator" : "Jonathan Worthington",
-    "description" : "Simple tracing and debugging support for Perl 6 grammars",
-    "build-depends" : [
-        "Terminal::ANSIColor"
-    ],
-    "test-depends" : [
-        "Test"
-    ],
-    "depends" : [
-        "Terminal::ANSIColor"
-    ],
-    "provides" : {
-        "Grammar::Tracer" : "lib/Grammar/Tracer.pm6",
-        "Grammar::Debugger" : "lib/Grammar/Debugger.pm6",
-        "Grammar::Debugger::WrapCache" : "lib/Grammar/Debugger/WrapCache.pm6"
-    },
-    "source-url" : "git://github.com/jnthn/grammar-debugger.git"
+  "auth": "github:raku-community-modules",
+  "build-depends": [
+    "Terminal::ANSIColor"
+  ],
+  "creator": "Jonathan Worthington",
+  "depends": [
+    "Terminal::ANSIColor"
+  ],
+  "description": "Interactive debugger for Raku grammars",
+  "license": "Artistic-2.0",
+  "name": "Grammar::Debugger",
+  "perl": "6.*",
+  "provides": {
+    "Grammar::Debugger": "lib/Grammar/Debugger.rakumod",
+    "Grammar::Debugger::WrapCache": "lib/Grammar/Debugger/WrapCache.rakumod",
+    "Grammar::Tracer": "lib/Grammar/Tracer.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/Grammar-Debugger.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "1.0.1"
 }

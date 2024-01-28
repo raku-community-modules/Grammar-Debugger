@@ -1,66 +1,6 @@
 use Grammar::Debugger::WrapCache;
 use Terminal::ANSIColor;
 
-=begin pod
-
-=head1 NAME
-
-Grammer::Debugger - interactive debugger for Perl 6 grammars
-
-=head1 SYNOPSIS
-
-In the file that has your grammar definition, merely load the module
-in the same lexical scope:
-
-	use Grammar::Debugger;
-
-	grammar Some::Grammar { ... }
-
-=head1 DESCRIPTION
-
-L<Grammar::Debugger> is an interactive debugger for Perl 6 grammars.
-It applies to all grammars in its lexical scope. When you run the your
-program and start to parse a grammar, you should get an interactive
-prompt. Type C<h> to get a list of commands:
-
-	$ perl6 my-grammar-program.p6
-	TOP
-	> h
-		r              run (until breakpoint, if any)
-		<enter>        single step
-		rf             run until a match fails
-		r <name>       run until rule <name> is reached
-		bp add <name>  add a rule name breakpoint
-		bp list        list all active rule name breakpoints
-		bp rm <name>   remove a rule name breakpoint
-		bp rm          removes all breakpoints
-		q              quit
-	>
-
-If you are debugging a grammar and want to set up breakpoints in code
-rather than entering them manually at the debug prompt, you can apply
-the breakpoint trait to any rule:
-
-	token name is breakpoint { \w+ [\h+ \w+]* }
-
-If you want to conditionally break, you can also do something like:
-
-	token name will break { $^m eq 'Russia' } { \w+ [\h+ \w+]* }
-
-Which will only break after the name rule has matched "Russia".
-
-On Windows, you might have to do something to interpret the ANSI codes:
-
-	$ perl6 MyGrammar.pm | perl -e "use Win32::Console::ANSI; print while (<>)"
-
-	$ perl6 MyGrammar.pm | perl -e "print s/\e\[[0-9;]+m//gr while (<>)"
-
-=head1 AUTHOR
-
-Jonathan Worthington, C<< <jnthn@jnthn.net> >>
-
-=end pod
-
 my enum InterventionPoint <EnterRule ExitRule>;
 
 multi trait_mod:<is>(Method $m, :$breakpoint!) is export {
@@ -250,3 +190,85 @@ my class DebuggedGrammarHOW is Metamodel::GrammarHOW does Grammar::Debugger::Wra
 my module EXPORTHOW {
     constant grammar = DebuggedGrammarHOW;
 }
+
+=begin pod
+
+=head1 NAME
+
+Grammer::Debugger - Interactive debugger for Raku grammars
+
+=head1 SYNOPSIS
+
+In the file that has your grammar definition, merely load the module
+in the same lexical scope:
+
+=begin code :lang<raku>
+
+use Grammar::Debugger;
+
+grammar Some::Grammar { ... }
+
+=end code
+
+=head1 DESCRIPTION
+
+L<Grammar::Debugger> is an interactive debugger for Raku grammars.
+It applies to all grammars in its lexical scope. When you run your
+program and start to parse a grammar, you should get an interactive
+prompt. Type C<h> to get a list of commands:
+
+=begin code
+
+$ raku my-grammar-program.raku
+TOP
+> h
+    r              run (until breakpoint, if any)
+    <enter>        single step
+    rf             run until a match fails
+    r <name>       run until rule <name> is reached
+    bp add <name>  add a rule name breakpoint
+    bp list        list all active rule name breakpoints
+    bp rm <name>   remove a rule name breakpoint
+    bp rm          removes all breakpoints
+    q              quit
+>
+
+=end code
+
+If you are debugging a grammar and want to set up breakpoints in code
+rather than entering them manually at the debug prompt, you can apply
+the breakpoint trait to any rule:
+
+=begin code :lang<raku>
+
+token name is breakpoint {
+    \w+ [\h+ \w+]*
+}
+
+=end code
+
+If you want to conditionally break, you can also do something like:
+
+=begin code :lang<raku>
+
+token name will break { $_ eq 'Raku' } {
+    \w+ [\h+ \w+]*
+}
+
+=end code
+
+Which will only break after the C<name> token has matched "Raku".
+
+=head1 AUTHOR
+
+Jonathan Worthington
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2011 - 2024 Jonathan Worthington
+
+Copyright 2024 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+
+=end pod
