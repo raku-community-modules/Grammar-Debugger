@@ -1,4 +1,6 @@
 Revision history for Grammar::Debugger
 
 {{$NEXT}}
+
+1.0.2  2024-12-11T20:01:48+01:00
     - Initial version as a Raku Community module

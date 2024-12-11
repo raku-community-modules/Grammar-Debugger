@@ -1,5 +1,5 @@
 {
-  "auth": "github:raku-community-modules",
+  "auth": "zef:raku-community-modules",
   "build-depends": [
     "Terminal::ANSIColor"
   ],
@@ -23,5 +23,5 @@
   ],
   "test-depends": [
   ],
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
