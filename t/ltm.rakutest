@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Grammar::Tracer;
 
 plan 1;
@@ -31,3 +30,5 @@ my $outcome = do {
 	MyGrammar.parse('aa', :rule<test>, :actions(MyActions)).made
 }
 is $outcome, 'correct', 'Picked longest token';
+
+# vim: expandtab shiftwidth=4

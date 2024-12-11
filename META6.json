@@ -18,7 +18,7 @@
   },
   "resources": [
   ],
-  "source-url": "git://github.com/raku-community-modules/Grammar-Debugger.git",
+  "source-url": "https://github.com/raku-community-modules/Grammar-Debugger.git",
   "tags": [
   ],
   "test-depends": [

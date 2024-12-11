@@ -1,4 +1,4 @@
-Revision history for Grammar-Debugger
+Revision history for Grammar::Debugger
 
 {{$NEXT}}
-    - Initial version in the zef ecosystem
+    - Initial version as a Raku Community module

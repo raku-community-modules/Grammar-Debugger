@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/lizmat/Grammar-Debugger/actions/workflows/test.yml/badge.svg)](https://github.com/lizmat/Grammar-Debugger/actions)
+[![Actions Status](https://github.com/raku-community-modules/Grammar-Debugger/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Grammar-Debugger/actions) [![Actions Status](https://github.com/raku-community-modules/Grammar-Debugger/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Grammar-Debugger/actions) [![Actions Status](https://github.com/raku-community-modules/Grammar-Debugger/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/Grammar-Debugger/actions)
 
 NAME
 ====
@@ -61,7 +61,7 @@ Jonathan Worthington
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2011 - 2024 Jonathan Worthington
+Copyright 2011 - 2017 Jonathan Worthington
 
 Copyright 2024 Raku Community
 

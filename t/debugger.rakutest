@@ -1,10 +1,7 @@
-use v6;
-
 use Test;
 use Grammar::Debugger;
 
 plan 1;
-
 
 grammar Sample {
     token TOP { <foo> }
@@ -19,3 +16,5 @@ lives-ok
         qw< the $*IN thing stopped working.. >;
     },
     'grammar.parse(...) with the debugger works';
+
+# vim: expandtab shiftwidth=4
