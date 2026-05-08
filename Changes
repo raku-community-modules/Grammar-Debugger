@@ -1,6 +1,8 @@
 Revision history for Grammar::Debugger
 
 {{$NEXT}}
+
+1.0.3  2026-05-09T00:04:34+02:00
     - Fix deprecation message
     - Update documentation
     - Modernize META info
