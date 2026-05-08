@@ -1,32 +1,6 @@
 use Grammar::Debugger::WrapCache;
 use Terminal::ANSIColor;
 
-=begin pod
-
-=head1 NAME
-
-Grammer::Tracer - non-interactive debugger for Perl 6 grammars
-
-=head1 SYNOPSIS
-
-In the file that has your grammar definition, merely load the module
-in the same lexical scope:
-
-	use Grammar::Tracer;
-
-	grammar Some::Grammar { ... }
-
-=head1 DESCRIPTION
-
-L<Grammar::Tracer> is the non-interactive version of L<Grammar::Debugger>.
-It runs through the entire grammar without stopping.
-
-=head1 AUTHOR
-
-Jonathan Worthington, C<< <jnthn@jnthn.net> >>
-
-=end pod
-
 my class TracedGrammarHOW is Metamodel::GrammarHOW does Grammar::Debugger::WrapCache {
     my $indent = 0;
 
@@ -68,7 +42,7 @@ my class TracedGrammarHOW is Metamodel::GrammarHOW does Grammar::Debugger::WrapC
         my $snippet = $match.Str;
         my $sniplen = 60 - (3 * $indent);
         $sniplen > 0 ??
-            colored(' ' ~ $snippet.substr(0, $sniplen).perl, 'white') !!
+            colored(' ' ~ $snippet.substr(0, $sniplen).raku, 'white') !!
             ''
     }
 
@@ -81,3 +55,5 @@ my class TracedGrammarHOW is Metamodel::GrammarHOW does Grammar::Debugger::WrapC
 my module EXPORTHOW {
     constant grammar = TracedGrammarHOW;
 }
+
+# vim: expandtab shiftwidth=4

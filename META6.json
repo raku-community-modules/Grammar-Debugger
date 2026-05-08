@@ -1,25 +1,44 @@
 {
   "auth": "zef:raku-community-modules",
+  "authors": [
+  ],
   "build-depends": [
-    "Terminal::ANSIColor"
   ],
   "creator": "Jonathan Worthington",
-  "depends": [
-    "Terminal::ANSIColor"
-  ],
+  "depends": {
+    "build": {
+      "requires": [
+        [
+          "Terminal::ANSIColor"
+        ]
+      ]
+    },
+    "runtime": {
+      "requires": [
+        "Terminal::ANSIColor"
+      ]
+    }
+  },
   "description": "Interactive debugger for Raku grammars",
   "license": "Artistic-2.0",
   "name": "Grammar::Debugger",
-  "perl": "6.*",
   "provides": {
     "Grammar::Debugger": "lib/Grammar/Debugger.rakumod",
     "Grammar::Debugger::WrapCache": "lib/Grammar/Debugger/WrapCache.rakumod",
     "Grammar::Tracer": "lib/Grammar/Tracer.rakumod"
   },
+  "raku": "6.*",
   "resources": [
   ],
   "source-url": "https://github.com/raku-community-modules/Grammar-Debugger.git",
+  "support": {
+    "bugtracker": "https://github.com/raku-community-modules/Grammar-Debugger/issues",
+    "email": "community@raku.org",
+    "source": "https://github.com/raku-community-modules/Grammar-Debugger.git"
+  },
   "tags": [
+    "GRAMMAR",
+    "DEBUGGER"
   ],
   "test-depends": [
   ],
